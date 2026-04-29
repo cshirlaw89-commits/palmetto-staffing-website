@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Current Openings | Palmetto Staffing Agency</title>
+<style>
+:root{--blue:#000866;--royal:#1f3f93;--gold:#f2c300;--cream:#f7f5ee;--text:#1e293b;--muted:#64748b;--line:#e5e7eb}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{max-width:1120px;margin:auto;padding:0 22px}
+.top{background:var(--blue);color:white;font-size:14px}
+.top .container{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+header{position:sticky;top:0;background:white;border-bottom:1px solid var(--line);z-index:10}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.logo-img{height:58px;width:auto;display:block}
+.links{display:flex;gap:22px;font-size:14px;font-weight:700;color:var(--blue);align-items:center}
+.links a:last-child{background:var(--blue);color:white;padding:10px 15px;border-radius:999px}
+.hero{background:linear-gradient(110deg,rgba(0,8,102,.92),rgba(31,63,147,.78)),url('https://palmettostaff.wpenginepowered.com/wp-content/uploads/2020/01/palmettohero-v24.jpg');background-size:cover;background-position:center;color:white}
+.hero .container{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding-top:90px;padding-bottom:90px}
+.page-hero{background:linear-gradient(110deg,rgba(0,8,102,.94),rgba(31,63,147,.82));color:white;padding:72px 0}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:13px;font-weight:900;color:var(--gold);margin-bottom:14px}
+h1{font-size:56px;line-height:1.03;margin:0;letter-spacing:-.04em}
+h2{font-size:38px;line-height:1.12;margin:0;color:var(--blue);letter-spacing:-.03em}
+h3{font-size:24px;margin:0;color:var(--blue)}
+p{margin:14px 0 0}
+.hero p,.page-hero p{font-size:19px;color:#f8fafc;max-width:760px}
+.btn{display:inline-block;margin-top:24px;margin-right:10px;padding:13px 21px;border-radius:999px;font-weight:800}
+.primary{background:var(--gold);color:var(--blue)}
+.outline{border:1px solid rgba(255,255,255,.45);color:white}
+.blue{background:var(--blue);color:white}
+.card{background:white;border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:0 14px 32px rgba(16,32,51,.08)}
+.hero-card{box-shadow:0 28px 70px rgba(0,0,0,.28)}
+.tag{display:inline-block;background:#eef2ff;color:var(--blue);border-radius:999px;padding:7px 11px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+.checkrow{display:flex;gap:12px;margin-top:14px;padding:13px;border:1px solid var(--line);border-radius:16px;background:#fbfdfb}
+.check{width:24px;height:24px;border-radius:50%;background:var(--royal);color:white;display:grid;place-items:center;flex:0 0 auto;font-weight:900}
+.section{padding:78px 0}
+.white{background:white}
+.intro{max-width:760px;margin-bottom:32px}
+.muted{color:var(--muted)}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.stat strong{display:block;font-size:30px;color:var(--royal)}
+.path{border-radius:28px;padding:34px}
+.jobseekers{background:var(--blue);color:white}
+.jobseekers h2,.jobseekers h3{color:white}
+.jobseekers p{color:#e0e7ff}
+.employers{background:#eef2ff;border:1px solid #c7d2fe}
+.steps{background:var(--blue);color:white}
+.steps h2,.steps h3{color:white}
+.step-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);box-shadow:none}
+.apply-panel{background:white;border:1px solid var(--line);border-radius:28px;padding:18px;box-shadow:0 18px 42px rgba(16,32,51,.10);overflow:hidden}
+.direct-contact{display:grid;gap:12px;margin-top:18px}
+.direct-contact a{display:block;background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:14px;font-weight:900;color:var(--blue)}
+.airtable-embed{width:100%;min-height:900px;border:1px solid #cbd5e1;border-radius:18px;background:transparent}
+.map-frame{width:100%;height:220px;border:0;border-radius:18px;margin-top:16px}
+.sticky-call{position:fixed;left:16px;right:16px;bottom:16px;z-index:50;display:none;background:var(--gold);color:var(--blue);text-align:center;padding:14px 18px;border-radius:999px;font-weight:900;box-shadow:0 12px 30px rgba(0,0,0,.22)}
+.cta{background:linear-gradient(135deg,var(--blue),var(--royal));border-radius:32px;padding:40px;color:white;display:flex;justify-content:space-between;gap:24px;align-items:center}
+.cta h2{color:white}
+.jobs-list{display:grid;gap:22px}
+.job-post{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start}
+.job-post h3{font-size:28px}
+.job-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.job-meta span{background:#f1f5f9;border-radius:999px;padding:7px 11px;font-size:13px;font-weight:800;color:#475569}
+.job-details{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
+.job-details div{background:#f8fafc;border:1px solid var(--line);border-radius:16px;padding:16px}
+.loading,.empty,.error{background:white;border:1px solid var(--line);border-radius:24px;padding:28px;color:var(--muted)}
+footer{background:white;border-top:1px solid var(--line);padding:32px 0;color:var(--muted)}
+.footer{display:grid;grid-template-columns:1.4fr .8fr .8fr .8fr;gap:22px}
+.foot-title{color:var(--blue);font-weight:900;margin-bottom:8px}
+@media(max-width:900px){
+.hero .container,.grid4,.grid3,.grid2,.footer,.job-details{grid-template-columns:1fr}
+.links{display:none}
+h1{font-size:40px}
+h2{font-size:31px}
+.job-post{grid-template-columns:1fr}
+.cta{flex-direction:column;align-items:flex-start}
+.logo-img{height:48px}
+.airtable-embed{min-height:850px}
+.sticky-call{display:block}
+body{padding-bottom:76px}
+}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="container">
+    <div>Serving Florence, Hartsville, Hemingway, and the Pee Dee area</div>
+    <div>Temporary • Temp-to-Hire • Permanent Staffing</div>
+  </div>
+</div>
+<header>
+  <div class="container nav">
+    <a href="index.html">
+      <img class="logo-img" src="https://palmettostaff.wpenginepowered.com/wp-content/uploads/2020/03/palmettologo-2.png" alt="Palmetto Staffing Agency, LLC">
+    </a>
+    <nav class="links">
+      <a href="index.html#about">About</a>
+      <a href="jobs.html">Openings</a>
+      <a href="index.html#employers">Employers</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="index.html#apply">Apply Today</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow">Current Openings</div>
+    <h1>Job Postings</h1>
+    <p>Browse current opportunities with Palmetto Staffing Agency. Jobs shown here are managed in Airtable and displayed as clean website cards.</p>
+    <a class="btn primary" href="index.html#apply">Apply Now</a>
+  </div>
+</section>
+
+<section class="section white">
+  <div class="container">
+    <div class="intro">
+      <h2>Available Positions</h2>
+      <p class="muted">To add or remove jobs, update the Jobs table in Airtable. Set Status to Open to show a job here.</p>
+    </div>
+    <div id="jobsList" class="jobs-list">
+      <div class="loading">Loading current openings...</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta">
+      <div>
+        <div class="eyebrow">Don’t see the right fit?</div>
+        <h2>Submit an application anyway.</h2>
+        <p>More openings may be available. Our team can match you with current and future opportunities.</p>
+      </div>
+      <div><a class="btn primary" href="index.html#apply">Apply Today</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer">
+    <div>
+      <img src="https://palmettostaff.wpenginepowered.com/wp-content/uploads/2020/03/palmettologo-2.png" alt="Palmetto Staffing Agency, LLC" style="height:48px;width:auto">
+      <p>Professional staffing solutions across the Pee Dee area.</p>
+    </div>
+    <div><div class="foot-title">Pages</div>About<br>Openings<br>Employers<br>Contact</div>
+    <div><div class="foot-title">Services</div>Temporary Staffing<br>Temp-to-Hire<br>Permanent Placement</div>
+    <div><div class="foot-title">Legal</div>Equal Opportunity Employer<br>Privacy Notice<br>© 2026 Palmetto Staffing Agency</div>
+  </div>
+</footer>
+<a class="sticky-call" href="tel:8434076361">Call Palmetto Staffing Now</a>
+
+<script>
+const jobsList = document.getElementById('jobsList');
+
+function value(job, key) {
+  return job[key] || '';
+}
+
+function escapeHtml(text) {
+  return String(text || '').replace(/[&<>"']/g, function(match) {
+    return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'})[match];
+  });
+}
+
+function paragraph(text) {
+  if (!text) return '<p class="muted">Details coming soon.</p>';
+  return '<p class="muted">' + escapeHtml(text).replace(/\n/g, '<br>') + '</p>';
+}
+
+fetch('/.netlify/functions/jobs')
+  .then(res => {
+    if (!res.ok) throw new Error('Could not load jobs');
+    return res.json();
+  })
+  .then(jobs => {
+    if (!jobs.length) {
+      jobsList.innerHTML = '<div class="empty">No current openings are posted right now. Please submit an application and our team will contact you when a matching position becomes available.</div>';
+      return;
+    }
+    jobsList.innerHTML = jobs.map(job => `
+      <article class="card job-post">
+        <div>
+          <span class="tag">Open Position</span>
+          <h3 style="margin-top:14px">${escapeHtml(value(job, 'Job Title'))}</h3>
+          <div class="job-meta">
+            ${value(job, 'Location') ? `<span>${escapeHtml(value(job, 'Location'))}</span>` : ''}
+            ${value(job, 'Pay') ? `<span>${escapeHtml(value(job, 'Pay'))}</span>` : ''}
+            ${value(job, 'Schedule') ? `<span>${escapeHtml(value(job, 'Schedule'))}</span>` : ''}
+            ${value(job, 'Job Type') ? `<span>${escapeHtml(value(job, 'Job Type'))}</span>` : ''}
+          </div>
+          <div class="job-details">
+            <div><strong>Description</strong>${paragraph(value(job, 'Description'))}</div>
+            <div><strong>Requirements</strong>${paragraph(value(job, 'Requirements'))}</div>
+          </div>
+        </div>
+        <a class="btn blue" href="index.html#apply">Apply</a>
+      </article>
+    `).join('');
+  })
+  .catch(() => {
+    jobsList.innerHTML = '<div class="error">Current openings could not be loaded. Please check back soon or call Palmetto Staffing directly.</div>';
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palmetto Staffing Agency</title>
+<style>
+:root{--blue:#000866;--royal:#1f3f93;--gold:#f2c300;--cream:#f7f5ee;--text:#1e293b;--muted:#64748b;--line:#e5e7eb}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{max-width:1120px;margin:auto;padding:0 22px}
+.top{background:var(--blue);color:white;font-size:14px}
+.top .container{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+header{position:sticky;top:0;background:white;border-bottom:1px solid var(--line);z-index:10}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.logo-img{height:58px;width:auto;display:block}
+.links{display:flex;gap:22px;font-size:14px;font-weight:700;color:var(--blue);align-items:center}
+.links a:last-child{background:var(--blue);color:white;padding:10px 15px;border-radius:999px}
+.hero{background:linear-gradient(110deg,rgba(0,8,102,.92),rgba(31,63,147,.78)),url('https://palmettostaff.wpenginepowered.com/wp-content/uploads/2020/01/palmettohero-v24.jpg');background-size:cover;background-position:center;color:white}
+.hero .container{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding-top:90px;padding-bottom:90px}
+.page-hero{background:linear-gradient(110deg,rgba(0,8,102,.94),rgba(31,63,147,.82));color:white;padding:72px 0}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:13px;font-weight:900;color:var(--gold);margin-bottom:14px}
+h1{font-size:56px;line-height:1.03;margin:0;letter-spacing:-.04em}
+h2{font-size:38px;line-height:1.12;margin:0;color:var(--blue);letter-spacing:-.03em}
+h3{font-size:24px;margin:0;color:var(--blue)}
+p{margin:14px 0 0}
+.hero p,.page-hero p{font-size:19px;color:#f8fafc;max-width:760px}
+.btn{display:inline-block;margin-top:24px;margin-right:10px;padding:13px 21px;border-radius:999px;font-weight:800}
+.primary{background:var(--gold);color:var(--blue)}
+.outline{border:1px solid rgba(255,255,255,.45);color:white}
+.blue{background:var(--blue);color:white}
+.card{background:white;border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:0 14px 32px rgba(16,32,51,.08)}
+.hero-card{box-shadow:0 28px 70px rgba(0,0,0,.28)}
+.tag{display:inline-block;background:#eef2ff;color:var(--blue);border-radius:999px;padding:7px 11px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+.checkrow{display:flex;gap:12px;margin-top:14px;padding:13px;border:1px solid var(--line);border-radius:16px;background:#fbfdfb}
+.check{width:24px;height:24px;border-radius:50%;background:var(--royal);color:white;display:grid;place-items:center;flex:0 0 auto;font-weight:900}
+.section{padding:78px 0}
+.white{background:white}
+.intro{max-width:760px;margin-bottom:32px}
+.muted{color:var(--muted)}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.stat strong{display:block;font-size:30px;color:var(--royal)}
+.path{border-radius:28px;padding:34px}
+.jobseekers{background:var(--blue);color:white}
+.jobseekers h2,.jobseekers h3{color:white}
+.jobseekers p{color:#e0e7ff}
+.employers{background:#eef2ff;border:1px solid #c7d2fe}
+.steps{background:var(--blue);color:white}
+.steps h2,.steps h3{color:white}
+.step-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);box-shadow:none}
+.apply-panel{background:white;border:1px solid var(--line);border-radius:28px;padding:18px;box-shadow:0 18px 42px rgba(16,32,51,.10);overflow:hidden}
+.direct-contact{display:grid;gap:12px;margin-top:18px}
+.direct-contact a{display:block;background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:14px;font-weight:900;color:var(--blue)}
+.airtable-embed{width:100%;min-height:900px;border:1px solid #cbd5e1;border-radius:18px;background:transparent}
+.map-frame{width:100%;height:220px;border:0;border-radius:18px;margin-top:16px}
+.sticky-call{position:fixed;left:16px;right:16px;bottom:16px;z-index:50;display:none;background:var(--gold);color:var(--blue);text-align:center;padding:14px 18px;border-radius:999px;font-weight:900;box-shadow:0 12px 30px rgba(0,0,0,.22)}
+.cta{background:linear-gradient(135deg,var(--blue),var(--royal));border-radius:32px;padding:40px;color:white;display:flex;justify-content:space-between;gap:24px;align-items:center}
+.cta h2{color:white}
+.jobs-list{display:grid;gap:22px}
+.job-post{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start}
+.job-post h3{font-size:28px}
+.job-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.job-meta span{background:#f1f5f9;border-radius:999px;padding:7px 11px;font-size:13px;font-weight:800;color:#475569}
+.job-details{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
+.job-details div{background:#f8fafc;border:1px solid var(--line);border-radius:16px;padding:16px}
+.loading,.empty,.error{background:white;border:1px solid var(--line);border-radius:24px;padding:28px;color:var(--muted)}
+footer{background:white;border-top:1px solid var(--line);padding:32px 0;color:var(--muted)}
+.footer{display:grid;grid-template-columns:1.4fr .8fr .8fr .8fr;gap:22px}
+.foot-title{color:var(--blue);font-weight:900;margin-bottom:8px}
+@media(max-width:900px){
+.hero .container,.grid4,.grid3,.grid2,.footer,.job-details{grid-template-columns:1fr}
+.links{display:none}
+h1{font-size:40px}
+h2{font-size:31px}
+.job-post{grid-template-columns:1fr}
+.cta{flex-direction:column;align-items:flex-start}
+.logo-img{height:48px}
+.airtable-embed{min-height:850px}
+.sticky-call{display:block}
+body{padding-bottom:76px}
+}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="container">
+    <div>Serving Florence, Hartsville, Hemingway, and the Pee Dee area</div>
+    <div>Temporary • Temp-to-Hire • Permanent Staffing</div>
+  </div>
+</div>
+<header>
+  <div class="container nav">
+    <a href="index.html">
+      <img class="logo-img" src="https://palmettostaff.wpenginepowered.com/wp-content/uploads/2020/03/palmettologo-2.png" alt="Palmetto Staffing Agency, LLC">
+    </a>
+    <nav class="links">
+      <a href="index.html#about">About</a>
+      <a href="jobs.html">Openings</a>
+      <a href="index.html#employers">Employers</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="index.html#apply">Apply Today</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="container">
+    <div>
+      <div class="eyebrow">Palmetto Staffing Agency</div>
+      <h1>Connecting Employers & Employees Across the Pee Dee</h1>
+      <p>Professional staffing solutions for local businesses and real opportunities for job seekers across Florence, Hartsville, Hemingway, and surrounding communities.</p>
+      <a class="btn primary" href="index.html#apply">Apply Today</a>
+      <a class="btn outline" href="jobs.html">Current Openings</a>
+    </div>
+    <div class="card hero-card">
+      <span class="tag">Why companies choose us</span>
+      <h3 style="margin-top:14px">Local staffing with a professional screening process.</h3>
+      <div class="checkrow"><span class="check">✓</span><div><b>Established in 2014</b><br><span class="muted">Serving the Pee Dee with local market knowledge.</span></div></div>
+      <div class="checkrow"><span class="check">✓</span><div><b>Flexible workforce options</b><br><span class="muted">Temporary, temp-to-hire, and permanent placements.</span></div></div>
+      <div class="checkrow"><span class="check">✓</span><div><b>Pre-employment screening</b><br><span class="muted">Testing, reference checks, E-Verify, background checks, and drug screening.</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="section white">
+  <div class="container grid4">
+    <div class="card stat"><strong>2014</strong>Established</div>
+    <div class="card stat"><strong>3</strong>Placement options</div>
+    <div class="card stat"><strong>Pee Dee</strong>Region served</div>
+    <div class="card stat"><strong>Local</strong>Independent agency</div>
+  </div>
+</section>
+<section id="about" class="section">
+  <div class="container">
+    <div class="intro">
+      <div class="eyebrow">About Us</div>
+      <h2>Independent, responsive, and built around the needs of local employers and workers.</h2>
+      <p class="muted">Palmetto Staffing Agency was established in 2014 and serves the entire Pee Dee area. As an independently owned and operated staffing company, we are able to offer flexible staffing plans, responsive service, and customized solutions for our clients.</p>
+    </div>
+    <div class="grid3">
+      <div class="card"><span class="tag">Local</span><h3 style="margin-top:16px">Pee Dee Focused</h3><p class="muted">We understand the needs of local employers and the people looking for work in our region.</p></div>
+      <div class="card"><span class="tag">Flexible</span><h3 style="margin-top:16px">Built Around You</h3><p class="muted">Staffing options can be tailored to business needs, including temporary, temp-to-hire, and permanent roles.</p></div>
+      <div class="card"><span class="tag">Professional</span><h3 style="margin-top:16px">Screened Candidates</h3><p class="muted">Our process helps employers reduce turnover and connect with qualified, prepared candidates.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container grid2">
+    <div class="path jobseekers">
+      <div class="eyebrow">For Job Seekers</div>
+      <h2>Find a job today.</h2>
+      <p>View current openings or apply online to be matched with opportunities that fit your skills, schedule, and experience.</p>
+      <a class="btn primary" href="jobs.html">View Openings</a>
+      <a class="btn outline" href="index.html#apply">Apply Today</a>
+    </div>
+    <div id="employers" class="path employers">
+      <div class="eyebrow">For Employers</div>
+      <h2>Need qualified employees?</h2>
+      <p class="muted">We help businesses fill positions with qualified candidates who match job-specific needs. Employers can call or complete the staffing request form below.</p>
+      <a class="btn blue" href="#employer-request">Request Employees</a>
+    </div>
+  </div>
+</section>
+<section class="section steps">
+  <div class="container">
+    <div class="intro">
+      <div class="eyebrow">How It Works</div>
+      <h2>A simpler path from application to placement.</h2>
+    </div>
+    <div class="grid3">
+      <div class="card step-card"><div class="eyebrow">01</div><h3>Apply Online</h3><p>Job seekers complete the Airtable application directly on this page.</p></div>
+      <div class="card step-card"><div class="eyebrow">02</div><h3>We Review and Match</h3><p>Applications go into Airtable so your team can review, track status, and follow up.</p></div>
+      <div class="card step-card"><div class="eyebrow">03</div><h3>Get to Work</h3><p>We help workers connect with opportunities and help employers fill roles faster.</p></div>
+    </div>
+  </div>
+</section>
+<section id="contact" class="section">
+  <div class="container">
+    <div class="intro">
+      <div class="eyebrow">Contact</div>
+      <h2>Talk to Palmetto Staffing directly.</h2>
+      <p class="muted">Applicants can call a local office or apply online. Employers can call or submit a staffing request below.</p>
+    </div>
+    <div class="grid3">
+      <div class="card"><span class="tag">Florence Office</span><h3 style="margin-top:14px">2300 2nd Loop Rd</h3><p class="muted">Florence, SC 29501</p><div class="direct-contact"><a href="tel:8434076361">Call 843-407-6361</a><a href="https://www.google.com/maps/search/?api=1&query=2300%202nd%20Loop%20Rd%20Florence%20SC%2029501" target="_blank" rel="noopener">Open in Google Maps</a></div><iframe class="map-frame" loading="lazy" src="https://www.google.com/maps?q=2300%202nd%20Loop%20Rd%20Florence%20SC%2029501&output=embed"></iframe></div>
+      <div class="card"><span class="tag">Hartsville Office</span><h3 style="margin-top:14px">853 W. Carolina Ave</h3><p class="muted">Hartsville, SC 29550</p><div class="direct-contact"><a href="tel:8433099806">Call 843-309-9806</a><a href="https://www.google.com/maps/search/?api=1&query=853%20W%20Carolina%20Ave%20Hartsville%20SC%2029550" target="_blank" rel="noopener">Open in Google Maps</a></div><iframe class="map-frame" loading="lazy" src="https://www.google.com/maps?q=853%20W%20Carolina%20Ave%20Hartsville%20SC%2029550&output=embed"></iframe></div>
+      <div class="card"><span class="tag">Hemingway Office</span><h3 style="margin-top:14px">109-B North Main St</h3><p class="muted">Hemingway, SC 29554</p><div class="direct-contact"><a href="tel:8439334093">Call 843-933-4093</a><a href="https://www.google.com/maps/search/?api=1&query=109-B%20North%20Main%20St%20Hemingway%20SC%2029554" target="_blank" rel="noopener">Open in Google Maps</a></div><iframe class="map-frame" loading="lazy" src="https://www.google.com/maps?q=109-B%20North%20Main%20St%20Hemingway%20SC%2029554&output=embed"></iframe></div>
+    </div>
+  </div>
+</section>
+<section id="employer-request" class="section white">
+  <div class="container grid2">
+    <div><div class="eyebrow">Employer Request</div><h2>Need employees?</h2><p class="muted">Complete this short request and Palmetto Staffing will follow up about your hiring needs. This is separate from the applicant application form.</p><div class="direct-contact"><a href="tel:8434076361">Call Main Office: 843-407-6361</a></div></div>
+    <div class="card"><h3>Request Staffing Support</h3><p class="muted">Employers can submit staffing needs below. This goes directly into Airtable and can trigger notifications to Cameron, Corey, and Ronnie.</p><div class="apply-panel" style="margin-top:18px;padding:10px;border-radius:22px"><iframe class="airtable-embed" src="https://airtable.com/embed/appsKMryvnmEAehrM/pagpnB1tRjKKIdYq6/form" frameborder="0" onmousewheel="" width="100%" height="700" style="background: transparent; border: 1px solid #ccc;"></iframe></div></div>
+  </div>
+</section>
+<section id="apply" class="section white">
+  <div class="container">
+    <div class="intro"><div class="eyebrow">Apply Today</div><h2>Submit your application online.</h2><p class="muted">Complete the form below. Your application goes directly into the Palmetto Staffing Applicants base in Airtable.</p></div>
+    <div class="apply-panel"><iframe class="airtable-embed" src="https://airtable.com/embed/appsKMryvnmEAehrM/pagr1QznV78oMhI64/form" frameborder="0" onmousewheel="" width="100%" height="900" style="background: transparent; border: 1px solid #ccc;"></iframe></div>
+  </div>
+</section>
+<section class="container" style="padding-bottom:78px"><div class="cta"><div><div class="eyebrow">Ready to Get Started?</div><h2>Let’s connect the right people to the right opportunities.</h2><p>Whether you are searching for a job or dependable employees, Palmetto Staffing Agency is ready to help.</p></div><div><a class="btn primary" href="index.html#apply">Apply Now</a><a class="btn outline" href="index.html#contact">Contact Us</a></div></div></section>
+</main>
+
+<footer>
+  <div class="container footer">
+    <div>
+      <img src="https://palmettostaff.wpenginepowered.com/wp-content/uploads/2020/03/palmettologo-2.png" alt="Palmetto Staffing Agency, LLC" style="height:48px;width:auto">
+      <p>Professional staffing solutions across the Pee Dee area.</p>
+    </div>
+    <div><div class="foot-title">Pages</div>About<br>Openings<br>Employers<br>Contact</div>
+    <div><div class="foot-title">Services</div>Temporary Staffing<br>Temp-to-Hire<br>Permanent Placement</div>
+    <div><div class="foot-title">Legal</div>Equal Opportunity Employer<br>Privacy Notice<br>© 2026 Palmetto Staffing Agency</div>
+  </div>
+</footer>
+<a class="sticky-call" href="tel:8434076361">Call Palmetto Staffing Now</a>
+
+</body>
+</html>
