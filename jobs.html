@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Current Openings | Palmetto Staffing Agency</title>
+<meta name="description" content="Browse current job openings with Palmetto Staffing Agency across Florence, Hartsville, Hemingway, and the Pee Dee area.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta property="og:title" content="Current Openings | Palmetto Staffing Agency">
+<meta property="og:description" content="See open positions across the Pee Dee and apply online.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/palmetto-hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Current Openings | Palmetto Staffing Agency">
+<meta name="twitter:description" content="See open positions across the Pee Dee and apply online.">
+<meta name="twitter:image" content="assets/palmetto-hero.jpg">
 <style>
 :root{--blue:#000866;--royal:#1f3f93;--gold:#f2c300;--cream:#f7f5ee;--text:#1e293b;--muted:#64748b;--line:#e5e7eb}
 *{box-sizing:border-box}
@@ -18,7 +28,7 @@ header{position:sticky;top:0;background:white;border-bottom:1px solid var(--line
 .logo-img{height:58px;width:auto;display:block}
 .links{display:flex;gap:22px;font-size:14px;font-weight:700;color:var(--blue);align-items:center}
 .links a:last-child{background:var(--blue);color:white;padding:10px 15px;border-radius:999px}
-.hero{background:linear-gradient(110deg,rgba(0,8,102,.92),rgba(31,63,147,.78)),url('https://palmettostaff.wpenginepowered.com/wp-content/uploads/2020/01/palmettohero-v24.jpg');background-size:cover;background-position:center;color:white}
+.hero{background:linear-gradient(110deg,rgba(0,8,102,.92),rgba(31,63,147,.78)),url('assets/palmetto-hero.jpg');background-size:cover;background-position:center;color:white}
 .hero .container{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding-top:90px;padding-bottom:90px}
 .page-hero{background:linear-gradient(110deg,rgba(0,8,102,.94),rgba(31,63,147,.82));color:white;padding:72px 0}
 .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:13px;font-weight:900;color:var(--gold);margin-bottom:14px}
@@ -96,9 +106,9 @@ body{padding-bottom:76px}
 <header>
   <div class="container nav">
     <a href="index.html">
-      <img class="logo-img" src="https://palmettostaff.wpenginepowered.com/wp-content/uploads/2020/03/palmettologo-2.png" alt="Palmetto Staffing Agency, LLC">
+      <img class="logo-img" src="assets/palmetto-logo.png" alt="Palmetto Staffing Agency, LLC">
     </a>
-    <nav class="links">
+    <nav class="links" aria-label="Primary">
       <a href="index.html#about">About</a>
       <a href="jobs.html">Openings</a>
       <a href="index.html#employers">Employers</a>
@@ -112,8 +122,8 @@ body{padding-bottom:76px}
 <section class="page-hero">
   <div class="container">
     <div class="eyebrow">Current Openings</div>
-    <h1>Job Postings</h1>
-    <p>Browse current opportunities with Palmetto Staffing Agency. Jobs shown here are managed in Airtable and displayed as clean website cards.</p>
+    <h1>Current Openings</h1>
+    <p>Browse current opportunities with Palmetto Staffing Agency across Florence, Hartsville, Hemingway, and the Pee Dee area.</p>
     <a class="btn primary" href="index.html#apply">Apply Now</a>
   </div>
 </section>
@@ -122,7 +132,7 @@ body{padding-bottom:76px}
   <div class="container">
     <div class="intro">
       <h2>Available Positions</h2>
-      <p class="muted">To add or remove jobs, update the Jobs table in Airtable. Set Status to Open to show a job here.</p>
+      <p class="muted">Don&rsquo;t see the role you&rsquo;re looking for? Submit an application anyway and our team will reach out when a matching position opens.</p>
     </div>
     <div id="jobsList" class="jobs-list">
       <div class="loading">Loading current openings...</div>
@@ -147,12 +157,12 @@ body{padding-bottom:76px}
 <footer>
   <div class="container footer">
     <div>
-      <img src="https://palmettostaff.wpenginepowered.com/wp-content/uploads/2020/03/palmettologo-2.png" alt="Palmetto Staffing Agency, LLC" style="height:48px;width:auto">
+      <img src="assets/palmetto-logo.png" alt="Palmetto Staffing Agency, LLC" style="height:48px;width:auto">
       <p>Professional staffing solutions across the Pee Dee area.</p>
     </div>
-    <div><div class="foot-title">Pages</div>About<br>Openings<br>Employers<br>Contact</div>
+    <div><div class="foot-title">Pages</div><a href="index.html#about">About</a><br><a href="jobs.html">Openings</a><br><a href="index.html#employers">Employers</a><br><a href="index.html#contact">Contact</a></div>
     <div><div class="foot-title">Services</div>Temporary Staffing<br>Temp-to-Hire<br>Permanent Placement</div>
-    <div><div class="foot-title">Legal</div>Equal Opportunity Employer<br>Privacy Notice<br>© 2026 Palmetto Staffing Agency</div>
+    <div><div class="foot-title">Legal</div>Equal Opportunity Employer<br><a href="privacy.html">Privacy Notice</a><br>&copy; 2026 Palmetto Staffing Agency</div>
   </div>
 </footer>
 <a class="sticky-call" href="tel:8434076361">Call Palmetto Staffing Now</a>
