@@ -176,11 +176,23 @@ function paragraph(text) {
 }
 
 fetch('/.netlify/functions/jobs')
-  .then(res => {
-    if (!res.ok) throw new Error('Could not load jobs');
-    return res.json();
+  .then(async res => {
+    const text = await res.text();
+    let payload;
+    try { payload = JSON.parse(text); } catch (e) { payload = text; }
+    if (!res.ok) {
+      const err = new Error('Could not load jobs');
+      err.status = res.status;
+      err.payload = payload;
+      throw err;
+    }
+    return payload;
   })
   .then(jobs => {
+    if (!Array.isArray(jobs)) {
+      jobsList.innerHTML = '<div class="error">Current openings could not be loaded. The jobs service returned an unexpected response.</div>';
+      return;
+    }
     if (!jobs.length) {
       jobsList.innerHTML = '<div class="empty">No current openings are posted right now. Please submit an application and our team will contact you when a matching position becomes available.</div>';
       return;
@@ -205,8 +217,27 @@ fetch('/.netlify/functions/jobs')
       </article>
     `).join('');
   })
-  .catch(() => {
-    jobsList.innerHTML = '<div class="error">Current openings could not be loaded. Please check back soon or call Palmetto Staffing directly.</div>';
+  .catch(err => {
+    let detail = '';
+    if (err && err.payload) {
+      if (typeof err.payload === 'string') {
+        detail = err.payload;
+      } else if (err.payload.error) {
+        detail = err.payload.error;
+        if (err.payload.details) {
+          try {
+            const inner = typeof err.payload.details === 'string' ? JSON.parse(err.payload.details) : err.payload.details;
+            if (inner && inner.error && inner.error.message) detail += ': ' + inner.error.message;
+            else detail += ': ' + (typeof err.payload.details === 'string' ? err.payload.details : JSON.stringify(err.payload.details));
+          } catch (e) {
+            detail += ': ' + err.payload.details;
+          }
+        }
+      }
+    }
+    jobsList.innerHTML = '<div class="error"><strong>Current openings could not be loaded.</strong>'
+      + (detail ? '<br><br><span class="muted" style="font-size:13px">' + escapeHtml(detail) + '</span>' : '')
+      + '<br><br>Please check back soon or call Palmetto Staffing directly.</div>';
   });
 </script>
 </body>
